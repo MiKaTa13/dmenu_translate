@@ -26,16 +26,6 @@ POS_X=$((960 - WIN_WIDTH / 2))
 POS_Y=540
 LINE_NUM=25
 
-# Debug
-DEBUG_STATE=0
-debug() {
-  local state=$1
-  local message=$2
-  if [[ $state == 1 ]]; then
-    echo "$message"
-  fi
-}
-
 # Function to generate a cache key using md5 hash
 get_hash() {
   printf '%s' "$(md5 <<< "$1")"
