@@ -59,7 +59,8 @@ handle_cache() {
 
   # Compare hashes and update cache if different
   if [[ "$cache_hash" != "$input_hash" ]]; then
-    clear_cache   # Translate the input data and update the cache
+    # Translate the input data and update the cache
+    clear_cache     
     translated_text=$(translate "$1")
     printf '%s\n%s' "$input_hash" "$translated_text" > "$cache_file"
     printf '%s' "$translated_text" # Show translated text
