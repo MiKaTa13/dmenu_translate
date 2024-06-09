@@ -24,7 +24,7 @@ This script translates the content from the clipboard using `trans` and caches t
 2. Copy some text to the clipboard.
 3. Run the script.
 
-## Integration with quite browser
+## Integration with qutebrowser
 
 1. Create a symlink in the qutebrowser scripts folder pointing to dmenu_trans.sh.
     `ln -s /path/to/dmenu_trans.sh ~/.config/qutebrowser/scripts/translate`
