@@ -59,15 +59,13 @@ handle_cache() {
 
   # Compare hashes and update cache if different
   if [[ "$cache_hash" != "$input_hash" ]]; then
-    clear_cache && debug $DEBUG_STATE "<<<Cache cleared.>>>"
-    # Translate the input data and update the cache
+    clear_cache   # Translate the input data and update the cache
     translated_text=$(translate "$1")
     printf '%s\n%s' "$input_hash" "$translated_text" > "$cache_file"
     printf '%s' "$translated_text" # Show translated text
-    debug $DEBUG_STATE "<<<Caching file.>>>"
   else
     # Print cached content except the first line (hash line)
-    sed '1d' "$cache_file" && debug $DEBUG_STATE "<<<Using cached file.>>>"
+    sed '1d' "$cache_file"
   fi
 }
 
